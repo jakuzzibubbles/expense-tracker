@@ -7,3 +7,7 @@ npm i react-icons axios moment emoji-picker-react react-router-dom recharts reac
 
 backend:
 npm i express jsonwebtoken mongoose dotenv cors bcryptjs multer xlsx
+
+in package.json replace index.js with server.js
+
+npm i nodemon --save-dev
