@@ -4,6 +4,12 @@ import { useUserAuth } from '../../hooks/useUserAuth';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
+import InfoCard from '../../components/Cards/InfoCard';
+
+import { LuHandCoins, LuWalletMinimal } from 'react-icons/lu';
+import { IoMdCard } from 'react-icons/io';
+import { addThousendsSeperator } from '../../utils/helper';
+import RecentTransactions from '../../components/Dashboard/RecentTransactions';
 
 
 const Home = () => {
@@ -43,8 +49,40 @@ const Home = () => {
 
   return (
     <DashboardLayout activeMenu="Dashboard">
-      <div className='my-5 mx-auto'>
-        Home
+      <div className="my-5 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <InfoCard
+            icon={<IoMdCard />}
+            label="Total Balance"
+            value={`€${addThousendsSeperator(
+              dashboardData?.totalBalance || 0
+            )}`}
+            color="bg-primary"
+          />
+
+          <InfoCard
+            icon={<LuWalletMinimal />}
+            label="Total Income"
+            value={`€${addThousendsSeperator(dashboardData?.totalIncome || 0)}`}
+            color="bg-orange-500"
+          />
+
+          <InfoCard
+            icon={<LuHandCoins />}
+            label="Total Expense"
+            value={`€${addThousendsSeperator(
+              dashboardData?.totalExpenses || 0
+            )}`}
+            color="bg-red-500"
+          />
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-6'>
+          <RecentTransactions
+            transactions={dashboardData?.recentTransactions}
+            onSeeMore={() => navigate("/expense")}
+          />
+        </div>
       </div>
     </DashboardLayout>
   );
