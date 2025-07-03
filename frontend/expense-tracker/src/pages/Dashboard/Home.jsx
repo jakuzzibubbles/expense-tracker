@@ -13,7 +13,7 @@ import RecentTransactions from "../../components/Dashboard/RecentTransactions";
 import FinanceOverview from "../../components/Dashboard/FinanceOverview";
 import ExpenseTransactions from "../../components/Dashboard/ExpenseTransactions";
 import Last30DaysExpenses from "../../components/Dashboard/Last30DaysExpenses";
-import CustomBarChart from "../../components/Charts/CustomBarChart";
+
 
 const Home = () => {
   useUserAuth();
