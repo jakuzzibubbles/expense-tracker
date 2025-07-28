@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import AuthLayout from '../../components/layouts/AuthLayout';
-import { useNavigate, Link } from 'react-router-dom';
-import Input from '../../components/Inputs/Input';
-import { validateEmail } from '../../utils/helper';
-import axiosInstance from '../../utils/axiosInstance';
-import { API_PATHS } from '../../utils/apiPaths';
-import { useContext } from 'react';
-import { UserContext } from '../../context/userContext';
-
+import React, { useState } from "react";
+import AuthLayout from "../../components/layouts/AuthLayout";
+import { useNavigate, Link } from "react-router-dom";
+import Input from "../../components/Inputs/Input";
+import { validateEmail } from "../../utils/helper";
+import axiosInstance from "../../utils/axiosInstance";
+import { API_PATHS } from "../../utils/apiPaths";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -54,7 +53,7 @@ const Login = () => {
         setError("Something went wrong. Please try again.");
       }
     }
-  }
+  };
 
   return (
     <AuthLayout>
@@ -81,7 +80,7 @@ const Login = () => {
             type="password"
           />
 
-          {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
           <button type="submit" className="btn-primary">
             LOGIN
@@ -97,6 +96,6 @@ const Login = () => {
       </div>
     </AuthLayout>
   );
-}
+};
 
-export default Login
+export default Login;

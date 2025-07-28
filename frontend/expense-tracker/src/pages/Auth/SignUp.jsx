@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import AuthLayout from '../../components/layouts/AuthLayout';
-import { useNavigate, Link } from 'react-router-dom';
+import AuthLayout from "../../components/layouts/AuthLayout";
+import { useNavigate, Link } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/helper";
 import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { useContext } from "react";
-import { UserContext } from "../../context/userContext";
+import { UserContext } from "../../context/UserContext";
 import uploadImage from "../../utils/uploadImage";
 
 const SignUp = () => {
@@ -30,13 +30,13 @@ const SignUp = () => {
     if (!fullName) {
       setError("Please enter your name.");
       return;
-    } 
+    }
 
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
       return;
     }
-    
+
     if (!password) {
       setError("Please enter the password.");
       return;
@@ -46,7 +46,6 @@ const SignUp = () => {
 
     // SignUp API call
     try {
-
       // upload image if present
       if (profilePic) {
         const imgUploadRes = await uploadImage(profilePic);
@@ -76,7 +75,6 @@ const SignUp = () => {
     }
   };
 
-
   return (
     <AuthLayout>
       <div className="lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center">
@@ -86,7 +84,6 @@ const SignUp = () => {
         </p>
 
         <form onSubmit={handleSignUp}>
-
           <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
           <div className="grid grid-cols md:grid-cols-2 gap-4">
@@ -106,29 +103,29 @@ const SignUp = () => {
               type="text"
             />
 
-          <div className="col-span-2">
-            <Input
-              value={password}
-              onChange={({ target }) => setPassword(target.value)}
-              label="Password"
-              placeholder="Min 8 Characters"
-              type="password"
-            />
-           </div>
+            <div className="col-span-2">
+              <Input
+                value={password}
+                onChange={({ target }) => setPassword(target.value)}
+                label="Password"
+                placeholder="Min 8 Characters"
+                type="password"
+              />
+            </div>
           </div>
 
-           {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
-          
-                    <button type="submit" className="btn-primary">
-                      SIGN UP
-                    </button>
-          
-                    <p className="text-[13px] text-slate-800 mt-3">
-                      Already have an account?{" "}
-                      <Link className="font-medium text-primary underline" to="/login">
-                        Login
-                      </Link>
-                    </p>
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+
+          <button type="submit" className="btn-primary">
+            SIGN UP
+          </button>
+
+          <p className="text-[13px] text-slate-800 mt-3">
+            Already have an account?{" "}
+            <Link className="font-medium text-primary underline" to="/login">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
     </AuthLayout>
