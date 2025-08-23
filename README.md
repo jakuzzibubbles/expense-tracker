@@ -81,7 +81,7 @@ backend/              # Express server, MongoDB models, API routes, controllers
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/expense-tracker.git
+git clone https://github.com/jakuzzibubbles/expense-tracker.git
 cd expense-tracker
 ```
 
