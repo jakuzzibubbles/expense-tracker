@@ -185,9 +185,9 @@ Users can download their income and expense records as `.xlsx` files for externa
 
 ---
 
-![Login Page](./frontend/public/readme-assets/login.png)
+![Login Page](./frontend/expense-tracker/public/readme-assets/login.png)
 
-![SignUp Page](./frontend/public/readme-assets/signup.png)
+![SignUp Page](./frontend/expense-tracker/public/readme-assets/signup.png)
 
-![Dashboard 1](./frontend/public/readme-assets/dashboard1.png)
+![Dashboard 1](./frontend/expense-tracker/public/readme-assets/dashboard1.png)
 
