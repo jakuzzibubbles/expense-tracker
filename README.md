@@ -82,21 +82,15 @@ backend/              # Express server, MongoDB models, API routes, controllers
 
 ```bash
 git clone https://github.com/jakuzzibubbles/expense-tracker.git
-cd expense-tracker
+cd frontend
 ```
 
 ### 2. Setup the frontend
 
-Create the React app with Vite:
+Move into the expense-tracker folder:
 
 ```bash
-npm create vite@latest frontend
-```
-
-Move into the frontend folder:
-
-```bash
-cd frontend
+cd .\frontend\expense-tracker\
 ```
 
 Install dependencies:
