@@ -81,14 +81,27 @@ backend/              # Express server, MongoDB models, API routes, controllers
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/jakuzzibubbles/expense-tracker.git
+git clone https://github.com/your-username/expense-tracker.git
 cd expense-tracker
 ```
 
 ### 2. Setup the frontend
 
+Create the React app with Vite:
+
+```bash
+npm create vite@latest frontend
+```
+
+Move into the frontend folder:
+
 ```bash
 cd frontend
+```
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
@@ -109,6 +122,7 @@ Run the development server:
 ```bash
 npm run dev
 ```
+
 
 ### 3. Setup the backend
 
@@ -171,3 +185,8 @@ Users can download their income and expense records as `.xlsx` files for externa
 
 ---
 
+![Login Page](frontend/public/readme-assets/login.png)
+
+![SignUp Page](frontend/public/readme-assets/signup.png)
+
+![Dashboard 1](frontend/public/readme-assets/dashboard1.png)
