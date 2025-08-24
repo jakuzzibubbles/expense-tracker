@@ -3,7 +3,6 @@ import { LuArrowRight } from "react-icons/lu";
 import moment from "moment";
 import TransactionInfoCard from "../../components/Cards/TransactionInfoCard";
 
-
 const ExpenseTransactions = ({ transactions, onSeeMore }) => {
   return (
     <div className="card">
@@ -24,6 +23,8 @@ const ExpenseTransactions = ({ transactions, onSeeMore }) => {
             date={moment(expense.date).format("Do MMM YYYY")}
             amount={expense.amount}
             type="expense"
+            // TODO: Implement expense deletion with API call and state update
+            onDelete={() => {}}
             hideDeleteBtn
           />
         ))}
