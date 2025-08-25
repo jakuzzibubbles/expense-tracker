@@ -20,7 +20,6 @@ const Income = () => {
     show: false,
     data: null,
   });
-
   const [openAddIncomeModal, setOpenAddIncomeModal] = useState(false);
   
   
@@ -74,7 +73,7 @@ const Income = () => {
       toast.success("Income added successfully!");
       fetchIncomeDetails();
     } catch (error) {
-      console.error("Error adding imcome.", 
+      console.error("Error adding Income.", 
         error.response?.data?.message || error.message
       );
   };
